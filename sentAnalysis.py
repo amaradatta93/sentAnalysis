@@ -1,6 +1,6 @@
 import pprint
 
-from utils import statuses_response, hashtags_response
+from utils import statuses_response, hashtags_response, convert_to_timestamp
 
 tweets = []
 
@@ -9,8 +9,11 @@ def status_tweets():
     response = statuses_response()
     for status in response:
         tweets.append(status['full_text'])
+        stamp = convert_to_timestamp(status['created_at'])
+        tweets.append(stamp)
 
 
+'''
 def hashtag_tweets(index):
     response = hashtags_response(index)
     for hashtag in response['statuses']:
@@ -41,3 +44,4 @@ pprint.pprint(set(tweets))
 
 # import inspect
 # print(inspect.signature(twitter.Api.__init__))
+'''
