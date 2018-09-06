@@ -1,5 +1,3 @@
-import pprint
-
 from utils import statuses_response, hashtags_response, convert_to_timestamp, hashtags
 
 tweets = []
@@ -35,26 +33,6 @@ def hashtag_tweets(index):
                 'author': hashtag['user']['name'],
                 'tweet': hashtag['full_text'],
             })
-
-
-# status_tweets()
-hashtag_tweets(0)
-pprint.pprint(tweets)
-
-# connection = psycopg2.connect("dbname=tweets user=sentanalysis")
-
-
-##number of tweets at one hit ,
-
-# push pyscopg2 database :
-# data base table tweets , id extract
-# rate limit
-#  number of tweets
-#
-#
-# ============================================
-# sleep
-
 
 # import inspect
 # print(inspect.signature(twitter.Api.__init__))
